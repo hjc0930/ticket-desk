@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This file defines how agents should work in the Hono Agent Backend repository.
+This file defines how agents should work in the Ticket Desk Backend repository.
 
 ## Project Context
 

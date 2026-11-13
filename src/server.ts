@@ -25,7 +25,7 @@ export const formatServerStartupMessage = (port: number) => {
 
   return [
     '',
-    '╭─ Hono Agent server is ready ───────────────────────────',
+    '╭─ Ticket Desk server is ready ──────────────────────────',
     `│ Application  ${application}`,
     `│ Swagger UI   ${swagger}`,
     `│ OpenAPI JSON ${openApi}`,

@@ -13,7 +13,7 @@ describe('server startup presentation', () => {
 
   it('formats startup URLs for terminal readability', () => {
     expect(formatServerStartupMessage(4301)).toBe(`
-╭─ Hono Agent server is ready ───────────────────────────
+╭─ Ticket Desk server is ready ──────────────────────────
 │ Application  http://localhost:4301
 │ Swagger UI   http://localhost:4301/docs
 │ OpenAPI JSON http://localhost:4301/openapi.json

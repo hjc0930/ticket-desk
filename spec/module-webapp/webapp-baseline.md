@@ -37,5 +37,5 @@ Create a separately scoped React web application in `webapp/` as a pnpm workspac
 
 - `webapp/` contains a minimal React application with client-side routing and query-provider setup.
 - The app can request the backend health endpoint through the development proxy.
-- `pnpm --filter hono-agent-webapp run build` produces static frontend output.
+- `pnpm --filter ticket-desk-webapp run build` produces static frontend output.
 - Setup and run instructions are documented in `webapp/README.md`.

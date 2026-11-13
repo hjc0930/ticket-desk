@@ -1,4 +1,4 @@
-# Hono Agent Backend
+# Ticket Desk Backend
 
 Hono-based ticket system backend with authentication, role-based access control, user management, ticket categories, ticket workflows, comments, and assignment support. See `spec/` for the product roadmap and module contracts.
 
@@ -75,8 +75,8 @@ pnpm run test:e2e
 pnpm run test:watch
 pnpm run build
 pnpm start
-pnpm --filter hono-agent-webapp dev
-pnpm --filter hono-agent-webapp run build
+pnpm --filter ticket-desk-webapp dev
+pnpm --filter ticket-desk-webapp run build
 ```
 
 The React frontend lives in `webapp/` and is part of the pnpm workspace. Run the backend and frontend in separate terminals for local development.

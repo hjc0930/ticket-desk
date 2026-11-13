@@ -30,7 +30,7 @@ Cache the pnpm store using `pnpm-lock.yaml` and install with
 4. `pnpm test`
 5. `pnpm run test:e2e`
 6. `pnpm run build`
-7. `pnpm --filter hono-agent-webapp run build`
+7. `pnpm --filter ticket-desk-webapp run build`
 
 New runs cancel older runs for the same event and PR or branch. Do not filter
 paths: documentation and workflow changes must also be checked. Tests use the

@@ -185,9 +185,9 @@ export const AppShell = () => {
       <style>{layoutStyles}</style>
       <aside className="sidebar">
         <Link to="/tickets" className="brand">
-          <span className="brand-mark">H</span>
+          <span className="brand-mark">T</span>
           <span>
-            Hono Agent<small>服务工单工作台</small>
+            Ticket Desk<small>服务工单工作台</small>
           </span>
         </Link>
         <div className="nav-caption">工作区</div>

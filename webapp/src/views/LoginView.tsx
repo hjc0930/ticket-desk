@@ -144,9 +144,9 @@ export const LoginPage = () => {
       <style>{loginStyles}</style>
       <section className="login-aside">
         <Link to="/login" className="brand brand-light">
-          <span className="brand-mark">H</span>
+          <span className="brand-mark">T</span>
           <span>
-            Hono Agent<small>服务工单工作台</small>
+            Ticket Desk<small>服务工单工作台</small>
           </span>
         </Link>
         <div className="login-message">

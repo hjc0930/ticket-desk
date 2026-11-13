@@ -1,6 +1,6 @@
-# Hono Agent 工单工作台
+# Ticket Desk 工单工作台
 
-基于 React 的客户端单页应用，为 Hono Agent 工单系统提供登录、工单、评论、分类和管理员用户管理界面。技术栈为 React、TypeScript、Vite、React Router、TanStack Query 和 Tailwind CSS，不使用服务端渲染，也不增加独立前端后端。
+基于 React 的客户端单页应用，为 Ticket Desk 工单系统提供登录、工单、评论、分类和管理员用户管理界面。技术栈为 React、TypeScript、Vite、React Router、TanStack Query 和 Tailwind CSS，不使用服务端渲染，也不增加独立前端后端。
 
 ## 环境要求
 
@@ -13,9 +13,9 @@
 
 ```bash
 pnpm install
-pnpm --filter hono-agent-webapp dev
-pnpm --filter hono-agent-webapp run build
-pnpm --filter hono-agent-webapp preview
+pnpm --filter ticket-desk-webapp dev
+pnpm --filter ticket-desk-webapp run build
+pnpm --filter ticket-desk-webapp preview
 ```
 
 开发服务器会将 `/api/*` 和 `/health` 代理至 `http://localhost:3000`。如需使用其他后端地址，可在本地 `.env` 文件中设置 `VITE_API_PROXY_TARGET`；该地址必须能被 Vite 开发服务器访问。

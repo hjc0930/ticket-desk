@@ -13,7 +13,7 @@ export const registerOpenApi = (app: OpenAPIHono<{ Variables: AppVariables }>) =
   })
   app.doc('/openapi.json', {
     info: {
-      title: 'Hono Agent API',
+      title: 'Ticket Desk API',
       version: '0.1.0',
       description: [
         'REST API for user management, ticket categories, assignments, status transitions, and comments.',
