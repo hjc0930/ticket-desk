@@ -240,3 +240,10 @@ Updated on 2026-09-24:
 - All API response shapes are governed by `spec/common/api-response-comment.md`, which supersedes the success/error shapes described in "API conventions" above. Other documents reference that file instead of restating envelope fields.
 - Error bodies no longer carry `requestId`; clients use the `x-request-id` response header instead.
 - Endpoints adopt the new envelope in the implementing change for that common specification; the acceptance criteria above reflect the state at their completion time.
+
+## Framework migration record
+
+Updated on 2026-11-13:
+
+- The HTTP framework migrated from Hono to Fastify 5; see `spec/0005-fastify-migration.md` for the decision record, mapping table, contract baseline, and verification gates.
+- Hono-specific references in this baseline (technology table, directory notes, and testing strategy) describe the state at their completion time and are superseded by `spec/0005-fastify-migration.md`.

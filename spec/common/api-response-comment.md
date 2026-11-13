@@ -108,7 +108,7 @@ Mutation without payload (logout):
 
 ## Request ID
 
-`requestId` is **not** part of the envelope body. It remains available to clients via the `x-request-id` response header (supplied by the existing `requestContext` middleware) and is used for server-side log correlation. If a client sends `x-request-id` (≤ 128 chars), that value is honored, per the existing middleware.
+`requestId` is **not** part of the envelope body. It remains available to clients via the `x-request-id` response header (supplied by the request-context hook) and is used for server-side log correlation. If a client sends `x-request-id` (≤ 128 chars), that value is honored, per the existing request-context behavior.
 
 ## Implementation mapping
 

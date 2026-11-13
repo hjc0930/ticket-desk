@@ -4,7 +4,7 @@ This file defines how agents should work in the Ticket Desk Backend repository.
 
 ## Project Context
 
-- This is a ticket-system backend built with Node.js, Hono, and TypeScript.
+- This is a ticket-system backend built with Node.js, Fastify, and TypeScript.
 - Persistence uses Drizzle ORM. `DATABASE_TYPE` (`postgres` or `pglite`) selects the engine; when unset, a URL-shaped `DATABASE_URL` selects the `node-postgres` adapter and anything else falls back to embedded PGlite. With `pglite`, `DATABASE_URL` is the data directory (default `.data/pglite`, or `memory://`). Tests force an isolated in-memory PGlite via `vitest.setup.ts`.
 - `src/db/client.ts` owns lazy database initialization and cleanup; `src/db/schema.ts` defines the database schema.
 - `src/main.ts` composes the application, `src/server.ts` handles startup, and `src/lib/shutdown.ts` coordinates graceful shutdown.
@@ -70,7 +70,7 @@ The project requires Node.js 22.18+, 24.11+, or 26+, and pnpm. Run commands from
 
 ## Architecture
 
-- `src/main.ts` composes the Hono application; `src/server.ts` owns Node.js startup and port fallback.
+- `src/main.ts` composes the Fastify application; `src/server.ts` owns Node.js startup and port fallback.
 - Keep HTTP routing and response concerns in `routes/` and `middleware/`.
 - Put request and response validation schemas in `schemas/`, business logic in `services/`, and persistence access in `repositories/`.
 - Routes must not access the database directly.
