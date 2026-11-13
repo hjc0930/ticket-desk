@@ -1,15 +1,16 @@
-import { createMiddleware } from 'hono/factory'
+import type { FastifyReply, FastifyRequest } from 'fastify'
 
 import { verifyAccessToken } from '../lib/access-token.ts'
 import { forbiddenError, unauthorizedError } from '../lib/errors.ts'
-import type { AppVariables, UserRole } from '../types.ts'
+import type { UserRole } from '../types.ts'
 
-type GuardEnvironment = {
-  Variables: AppVariables
-}
-
-export const requireAuth = createMiddleware<GuardEnvironment>(async (context, next) => {
-  const authorization = context.req.header('Authorization')
+/**
+ * Verifies the Bearer access token and decorates the request with the
+ * authenticated user. Registered as an `onRequest` hook so authentication
+ * failures take precedence over body parsing and validation errors.
+ */
+export const requireAuth = async (request: FastifyRequest, _reply: FastifyReply) => {
+  const authorization = request.headers.authorization
   if (!authorization) throw unauthorizedError()
 
   const [scheme, token] = authorization.split(' ')
@@ -18,15 +19,14 @@ export const requireAuth = createMiddleware<GuardEnvironment>(async (context, ne
   const payload = await verifyAccessToken(token)
   if (!payload) throw unauthorizedError()
 
-  context.set('userId', payload.sub)
-  context.set('userRole', payload.role)
-  await next()
-})
+  request.user = { id: payload.sub, role: payload.role }
+}
 
-export const requireRole = (...allowed: UserRole[]) =>
-  createMiddleware<GuardEnvironment>(async (context, next) => {
-    const userRole = context.get('userRole')
-    if (!userRole) throw unauthorizedError()
-    if (!allowed.includes(userRole)) throw forbiddenError()
-    await next()
-  })
+/** Explicit role allow-list; no implicit hierarchy (`admin` is not implicitly allowed). */
+export const requireRole =
+  (...allowed: UserRole[]) =>
+  async (request: FastifyRequest) => {
+    const role = request.user?.role
+    if (!role) throw unauthorizedError()
+    if (!allowed.includes(role)) throw forbiddenError()
+  }

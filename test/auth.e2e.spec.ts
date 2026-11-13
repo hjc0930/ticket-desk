@@ -17,10 +17,9 @@ type TestServer = Awaited<ReturnType<typeof listenOnFirstAvailablePort>>
 const ADMIN_USERNAME = 'e2e-admin'
 const ADMIN_PASSWORD = 'e2e-admin-password'
 
-const closeServer = (server: TestServer) =>
-  new Promise<void>((resolve, reject) => {
-    server.close((error) => (error ? reject(error) : resolve()))
-  })
+const closeServer = async (server: TestServer) => {
+  await server.close()
+}
 
 describe('Authentication over HTTP with an isolated database (e2e)', () => {
   let applicationServer: TestServer
@@ -33,8 +32,8 @@ describe('Authentication over HTTP with an isolated database (e2e)', () => {
       password: ADMIN_PASSWORD,
     })
 
-    applicationServer = await listenOnFirstAvailablePort(createApp().fetch, 0)
-    baseUrl = `http://127.0.0.1:${(applicationServer.address() as AddressInfo).port}`
+    applicationServer = await listenOnFirstAvailablePort(createApp, 0)
+    baseUrl = `http://127.0.0.1:${(applicationServer.server.address() as AddressInfo).port}`
   })
 
   afterAll(async () => {

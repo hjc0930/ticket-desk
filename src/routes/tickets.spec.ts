@@ -26,7 +26,7 @@ const buildApp = async () => {
   const userRepository = new MemoryUserRepository([
     makeUser({ id: 'agent-1', username: 'agent1', role: 'agent', status: 'active' }),
   ])
-  const app = createApp({
+  const app = await createApp({
     ticketRepository,
     ticketCategoryRepository,
     ticketCommentRepository,
@@ -44,17 +44,18 @@ const jsonHeaders = { 'content-type': 'application/json' }
 describe('POST /api/tickets', () => {
   it('creates a ticket', async () => {
     const { app, requesterToken } = await buildApp()
-    const response = await app.request('/api/tickets', {
+    const response = await app.inject({
       method: 'POST',
+      url: '/api/tickets',
       headers: { ...authed(requesterToken), ...jsonHeaders },
-      body: JSON.stringify({
+      payload: JSON.stringify({
         title: 'New Ticket',
         description: 'Description',
         categoryId: 'cat-1',
       }),
     })
     const body = await response.json()
-    expect(response.status).toBe(200)
+    expect(response.statusCode).toBe(200)
     expect(body.data).toMatchObject({
       title: 'New Ticket',
       status: 'pending',
@@ -64,12 +65,13 @@ describe('POST /api/tickets', () => {
 
   it('rejects an invalid category', async () => {
     const { app, requesterToken } = await buildApp()
-    const response = await app.request('/api/tickets', {
+    const response = await app.inject({
       method: 'POST',
+      url: '/api/tickets',
       headers: { ...authed(requesterToken), ...jsonHeaders },
-      body: JSON.stringify({ title: 'x', description: 'y', categoryId: 'nope' }),
+      payload: JSON.stringify({ title: 'x', description: 'y', categoryId: 'nope' }),
     })
-    expect(response.status).toBe(400)
+    expect(response.statusCode).toBe(400)
     expect((await response.json()).code).toBe('INVALID_CATEGORY')
   })
 })
@@ -87,7 +89,11 @@ describe('GET /api/tickets visibility', () => {
       handlerId: null,
     })
 
-    const response = await app.request('/api/tickets', { headers: authed(requesterToken) })
+    const response = await app.inject({
+      method: 'GET',
+      url: '/api/tickets',
+      headers: authed(requesterToken),
+    })
     const body = await response.json()
     expect(body.meta.total).toBe(1)
     expect(body.data[0]?.requesterId).toBe('requester-1')
@@ -95,7 +101,11 @@ describe('GET /api/tickets visibility', () => {
 
   it('an agent sees all tickets', async () => {
     const { app, agentToken } = await buildApp()
-    const response = await app.request('/api/tickets', { headers: authed(agentToken) })
+    const response = await app.inject({
+      method: 'GET',
+      url: '/api/tickets',
+      headers: authed(agentToken),
+    })
     const body = await response.json()
     expect(body.meta.total).toBe(1)
   })
@@ -106,47 +116,51 @@ describe('POST /api/tickets/:id/transition', () => {
     const { app, agentToken, ticketRepository } = await buildApp()
     await ticketRepository.update('t-1', { handlerId: 'agent-1', status: 'in_progress' })
 
-    const response = await app.request('/api/tickets/t-1/transition', {
+    const response = await app.inject({
       method: 'POST',
+      url: '/api/tickets/t-1/transition',
       headers: { ...authed(agentToken), ...jsonHeaders },
-      body: JSON.stringify({ to: 'resolved' }),
+      payload: JSON.stringify({ to: 'resolved' }),
     })
-    expect(response.status).toBe(200)
+    expect(response.statusCode).toBe(200)
     expect((await response.json()).data.status).toBe('resolved')
   })
 
   it('rejects a requester advancing to in_progress', async () => {
     const { app, requesterToken } = await buildApp()
-    const response = await app.request('/api/tickets/t-1/transition', {
+    const response = await app.inject({
       method: 'POST',
+      url: '/api/tickets/t-1/transition',
       headers: { ...authed(requesterToken), ...jsonHeaders },
-      body: JSON.stringify({ to: 'in_progress' }),
+      payload: JSON.stringify({ to: 'in_progress' }),
     })
-    expect(response.status).toBe(403)
+    expect(response.statusCode).toBe(403)
   })
 })
 
 describe('POST /api/tickets/:id/assign', () => {
   it('admin assigns a pending ticket', async () => {
     const { app, adminToken } = await buildApp()
-    const response = await app.request('/api/tickets/t-1/assign', {
+    const response = await app.inject({
       method: 'POST',
+      url: '/api/tickets/t-1/assign',
       headers: { ...authed(adminToken), ...jsonHeaders },
-      body: JSON.stringify({ handlerId: 'agent-1' }),
+      payload: JSON.stringify({ handlerId: 'agent-1' }),
     })
     const body = await response.json()
-    expect(response.status).toBe(200)
+    expect(response.statusCode).toBe(200)
     expect(body.data).toMatchObject({ handlerId: 'agent-1', status: 'in_progress' })
   })
 
   it('rejects a non-admin', async () => {
     const { app, agentToken } = await buildApp()
-    const response = await app.request('/api/tickets/t-1/assign', {
+    const response = await app.inject({
       method: 'POST',
+      url: '/api/tickets/t-1/assign',
       headers: { ...authed(agentToken), ...jsonHeaders },
-      body: JSON.stringify({ handlerId: 'agent-1' }),
+      payload: JSON.stringify({ handlerId: 'agent-1' }),
     })
-    expect(response.status).toBe(403)
+    expect(response.statusCode).toBe(403)
   })
 })
 
@@ -154,19 +168,24 @@ describe('ticket comments', () => {
   it('an agent posts an internal note the requester cannot see', async () => {
     const { app, agentToken, requesterToken } = await buildApp()
 
-    const post = await app.request('/api/tickets/t-1/comments', {
+    const post = await app.inject({
       method: 'POST',
+      url: '/api/tickets/t-1/comments',
       headers: { ...authed(agentToken), ...jsonHeaders },
-      body: JSON.stringify({ body: 'Internal note', kind: 'internal' }),
+      payload: JSON.stringify({ body: 'Internal note', kind: 'internal' }),
     })
-    expect(post.status).toBe(200)
+    expect(post.statusCode).toBe(200)
 
-    const listAsAgent = await app.request('/api/tickets/t-1/comments', {
+    const listAsAgent = await app.inject({
+      method: 'GET',
+      url: '/api/tickets/t-1/comments',
       headers: authed(agentToken),
     })
     expect((await listAsAgent.json()).data).toHaveLength(1)
 
-    const listAsRequester = await app.request('/api/tickets/t-1/comments', {
+    const listAsRequester = await app.inject({
+      method: 'GET',
+      url: '/api/tickets/t-1/comments',
       headers: authed(requesterToken),
     })
     expect((await listAsRequester.json()).data).toHaveLength(0)

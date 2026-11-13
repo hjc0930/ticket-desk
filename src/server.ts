@@ -1,14 +1,11 @@
-import { createAdaptorServer } from '@hono/node-server'
 import { pathToFileURL } from 'node:url'
 
-import { app } from './main.ts'
 import { env } from './config/env.ts'
+import { closeDatabase } from './db/client.ts'
 import { logger } from './lib/logger.ts'
 import { registerGracefulShutdown } from './lib/shutdown.ts'
-import { closeDatabase } from './db/client.ts'
-
-type FetchHandler = Parameters<typeof createAdaptorServer>[0]['fetch']
-type NodeServer = ReturnType<typeof createAdaptorServer>
+import { createApp } from './main.ts'
+import type { AppInstance } from './types.ts'
 
 export const getServerAddresses = (port: number) => {
   const baseUrl = `http://localhost:${port}`
@@ -33,40 +30,29 @@ export const formatServerStartupMessage = (port: number) => {
   ].join('\n')
 }
 
-const listenOnPort = (fetch: FetchHandler, port: number) =>
-  new Promise<NodeServer>((resolve, reject) => {
-    const server = createAdaptorServer({ fetch })
-
-    const onError = (error: Error) => {
-      server.off('listening', onListening)
-      reject(error)
-    }
-    const onListening = () => {
-      server.off('error', onError)
-      resolve(server)
-    }
-
-    server.once('error', onError)
-    server.once('listening', onListening)
-    server.listen(port)
-  })
-
+// A Fastify instance cannot restart after close(), so each port attempt builds
+// a fresh instance through the factory and discards the failed one.
 export const listenOnFirstAvailablePort = async (
-  fetch: FetchHandler,
+  createInstance: () => Promise<AppInstance>,
   startPort: number,
   endPort = 65_535,
 ) => {
   for (let port = startPort; port <= endPort; port += 1) {
+    const instance = await createInstance()
     try {
-      const server = await listenOnPort(fetch, port)
+      // Dual-stack bind keeps parity with the previous Node adapter: listen(port)
+      // on all interfaces, so occupied ports surface as EADDRINUSE.
+      await instance.listen({ port, host: '::' })
 
       logger.info({ port }, 'server listening')
       process.stdout.write(`${formatServerStartupMessage(port)}\n`)
-      return server
+      return instance
     } catch (error) {
       if (!(error instanceof Error) || (error as NodeJS.ErrnoException).code !== 'EADDRINUSE') {
         throw error
       }
+
+      await instance.close()
 
       logger.warn(
         {
@@ -81,15 +67,15 @@ export const listenOnFirstAvailablePort = async (
   throw new Error(`No available port found between ${startPort} and ${endPort}`)
 }
 
-export const startServer = () => listenOnFirstAvailablePort(app.fetch, env.PORT)
+export const startServer = () => listenOnFirstAvailablePort(createApp, env.PORT)
 
 const isExecutedDirectly =
   process.argv[1] !== undefined && import.meta.url === pathToFileURL(process.argv[1]).href
 
 if (isExecutedDirectly) {
   void startServer()
-    .then((server) => {
-      registerGracefulShutdown(server, {
+    .then((instance) => {
+      registerGracefulShutdown(instance.server, {
         closeDatabase,
         logger,
         timeoutMs: env.SHUTDOWN_TIMEOUT_MS,

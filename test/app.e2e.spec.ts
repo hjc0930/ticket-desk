@@ -8,10 +8,9 @@ import { listenOnFirstAvailablePort } from '../src/server.ts'
 
 type TestServer = Awaited<ReturnType<typeof listenOnFirstAvailablePort>>
 
-const closeServer = (server: TestServer) =>
-  new Promise<void>((resolve, reject) => {
-    server.close((error) => (error ? reject(error) : resolve()))
-  })
+const closeServer = async (server: TestServer) => {
+  await server.close()
+}
 
 describe('Application (e2e)', () => {
   let applicationServer: TestServer
@@ -26,15 +25,17 @@ describe('Application (e2e)', () => {
 
     try {
       applicationServer = await listenOnFirstAvailablePort(
-        createApp().fetch,
+        createApp,
         occupiedPort,
         occupiedPort + 10,
       )
     } finally {
-      await closeServer(occupyingServer)
+      await new Promise<void>((resolve, reject) => {
+        occupyingServer.close((error) => (error ? reject(error) : resolve()))
+      })
     }
 
-    selectedPort = (applicationServer.address() as AddressInfo).port
+    selectedPort = (applicationServer.server.address() as AddressInfo).port
     baseUrl = `http://127.0.0.1:${selectedPort}`
   })
 
@@ -71,7 +72,7 @@ describe('Application (e2e)', () => {
     expect(openApiResponse.status).toBe(200)
     await expect(openApiResponse.json()).resolves.toMatchObject({ openapi: '3.1.0' })
     expect(docsResponse.status).toBe(200)
-    await expect(docsResponse.text()).resolves.toContain('SwaggerUI')
+    await expect(docsResponse.text()).resolves.toContain('swagger-ui')
   })
 
   it('returns the failure envelope for an unknown route', async () => {

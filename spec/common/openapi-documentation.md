@@ -14,9 +14,9 @@ conventions remain in `api-response-comment.md` and `pagination.md`.
   response envelope, and pagination. Describe detailed permissions, token behavior,
   validation rules, and business errors in the relevant operations and schemas.
 - Keep existing tag names and operation IDs stable; describe every tag in English.
-- Use OpenAPI `{id}` path templates rather than literal `:id` segments so Swagger
-  can substitute path parameters. zod-openapi maps these templates to the same
-  Hono runtime routes; existing resource-route tests verify compatibility.
+- Declare resource routes with Fastify `:id` path parameters; `@fastify/swagger`
+  publishes them as OpenAPI `{id}` templates so Swagger UI can substitute path
+  parameters. Existing resource-route tests verify compatibility.
 - Every operation has an English summary and a description explaining purpose,
   access requirements, defaults, side effects, and relevant business restrictions.
 - Document path/query/body fields and response properties with English meanings
@@ -33,8 +33,8 @@ conventions remain in `api-response-comment.md` and `pagination.md`.
 
 ## Verification
 
-Colocated `src/openapi.spec.ts` tests read the generated document through
-`createApp().request()` without a database or listening server. Verify introduction,
+Colocated `src/openapi.spec.ts` tests read the generated document through the
+Fastify application's `inject()` without a database or listening server. Verify introduction,
 tags, all operations, protected-route 401 responses, admin-route 403 responses,
 request validation responses, business-error descriptions, and field metadata.
 Check that examples conform to their Zod request schemas and existing defaults,

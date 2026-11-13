@@ -88,7 +88,7 @@ Each item gets its own module specification when selected. Priority order:
 
 Status: In progress.
 
-The frontend is a client-rendered React application in `webapp/`, built with Vite and TypeScript. It consumes the existing Hono REST API; server-side rendering and a second backend are out of scope. The stack and local development integration are specified in [`module-webapp/webapp-baseline.md`](./module-webapp/webapp-baseline.md); the planned ticket workspace UI is specified in [`module-webapp/ticket-workspace.md`](./module-webapp/ticket-workspace.md).
+The frontend is a client-rendered React application in `webapp/`, built with Vite and TypeScript. It consumes the existing backend REST API; server-side rendering and a second backend are out of scope. The stack and local development integration are specified in [`module-webapp/webapp-baseline.md`](./module-webapp/webapp-baseline.md); the planned ticket workspace UI is specified in [`module-webapp/ticket-workspace.md`](./module-webapp/ticket-workspace.md).
 
 ## Data model sketch
 

@@ -1,6 +1,6 @@
 # Ticket Desk Backend
 
-Hono-based ticket system backend with authentication, role-based access control, user management, ticket categories, ticket workflows, comments, and assignment support. See `spec/` for the product roadmap and module contracts.
+Fastify-based ticket system backend with authentication, role-based access control, user management, ticket categories, ticket workflows, comments, and assignment support. See `spec/` for the product roadmap and module contracts.
 
 ## Requirements
 

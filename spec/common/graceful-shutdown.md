@@ -9,9 +9,10 @@ in English.
 
 On the first signal:
 
-1. Stop accepting new connections with `server.close()` and allow active HTTP
-   requests to finish. The supported Node.js versions also close idle HTTP
-   connections through this API.
+1. Stop accepting new connections with the Fastify instance's `close()` (which
+   closes the underlying HTTP server) and allow active HTTP requests to finish.
+   The supported Node.js versions also close idle HTTP connections through this
+   API.
 2. Close the initialized database client: `pg.Pool.end()` for PostgreSQL or
    `PGlite.close()` for the embedded database. Do not initialize a database during
    shutdown. Once database closure begins, reject attempts to acquire it again.
