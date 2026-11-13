@@ -2,7 +2,7 @@
 
 ## Status
 
-In progress.
+Completed.
 
 ## Background
 
@@ -22,16 +22,16 @@ The HTTP layer was built on Hono 4 with `@hono/zod-openapi`, `@hono/node-server`
 
 ## Decisions
 
-| Concern               | Decision                                                                                                                                                                                      |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Validation and typing | `@fastify/type-provider-zod`; Zod schemas remain the single source in `src/schemas/`.                                                                                                         |
-| OpenAPI and docs      | `@fastify/swagger` (OpenAPI 3.1) plus `@fastify/swagger-ui` at `/openapi.json` and `/docs`. Route metadata (operationId, tags, summary, description, security, per-status response descriptions) is declared on Fastify route schemas. |
-| Auth guards           | `requireAuth` runs as an `onRequest` hook and decorates the request with the authenticated user; `requireRole` is a `preHandler` factory with explicit role allow-lists (no implicit hierarchy). |
-| Request context       | Request IDs come from Fastify's `genReqId` (honoring an inbound `x-request-id` of at most 128 characters) and are echoed on the reply; access logs keep the existing fields through an `onResponse` hook. |
+| Concern               | Decision                                                                                                                                                                                                                                     |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Validation and typing | `@fastify/type-provider-zod`; Zod schemas remain the single source in `src/schemas/`.                                                                                                                                                        |
+| OpenAPI and docs      | `@fastify/swagger` (OpenAPI 3.1) plus `@fastify/swagger-ui` at `/openapi.json` and `/docs`. Route metadata (operationId, tags, summary, description, security, per-status response descriptions) is declared on Fastify route schemas.       |
+| Auth guards           | `requireAuth` runs as an `onRequest` hook and decorates the request with the authenticated user; `requireRole` is a `preHandler` factory with explicit role allow-lists (no implicit hierarchy).                                             |
+| Request context       | Request IDs come from Fastify's `genReqId` (honoring an inbound `x-request-id` of at most 128 characters) and are echoed on the reply; access logs keep the existing fields through an `onResponse` hook.                                    |
 | Error handling        | `setErrorHandler` maps `ZodError` and `AppError` to the failure envelope; `setNotFoundHandler` returns the envelope 404. Fastify-native body-parse and validation failures are reshaped to `VALIDATION_ERROR` with `field: message` details. |
-| CORS and headers      | `@fastify/cors` with an allow-list reflection callback over `CORS_ORIGINS`; `@fastify/helmet` for security headers. Header sets are not part of the public API contract.                        |
-| Logging               | The existing Pino instance is passed to Fastify via `loggerInstance`; request lifecycle logging stays application-owned instead of Fastify's built-in request logging.                          |
-| Startup and shutdown  | `listenOnFirstAvailablePort` is reimplemented on `fastify.listen` and keeps the EADDRINUSE port scanning through 65535; shutdown drains HTTP via `app.close()` before database closure.         |
+| CORS and headers      | `@fastify/cors` with an allow-list reflection callback over `CORS_ORIGINS`; `@fastify/helmet` for security headers. Header sets are not part of the public API contract.                                                                     |
+| Logging               | The existing Pino instance is passed to Fastify via `loggerInstance`; request lifecycle logging stays application-owned instead of Fastify's built-in request logging.                                                                       |
+| Startup and shutdown  | `listenOnFirstAvailablePort` is reimplemented on `fastify.listen` and keeps the EADDRINUSE port scanning through 65535; shutdown drains HTTP via `app.close()` before database closure.                                                      |
 
 ## Contract baseline and equivalence gate
 
@@ -42,3 +42,17 @@ Before the migration, the Hono stack's `/openapi.json` is exported and committed
 - All existing quality gates pass unchanged: `format:check`, `lint`, `typecheck`, unit tests, E2E tests, `build`, and the webapp build.
 - `pnpm dev` boots; `/health`, `/openapi.json`, `/docs`, login, and ticket flows work through the webapp development proxy.
 - Envelope shapes, error codes, pagination fields, and `x-request-id` behavior stay identical to the pre-migration behavior.
+
+## Implementation record
+
+Completed on 2026-11-13:
+
+- Zod metadata moved from the `@hono/zod-openapi` `.openapi()` extension to Zod 4's native `.meta()`; descriptions, singular `example`, and `writeOnly` pass through to the generated document verbatim.
+- Per-status response descriptions ride on `x-response-description` metadata, which `@fastify/swagger` reads as the response description and strips from the media schema.
+- The document transform keeps the pre-migration rendering: `date-time` fields carry no pattern, objects do not pin `additionalProperties: false`, nullable fields render as `nullable: true`, and zod's implicit integer ceiling is omitted.
+- Accepted benign renderings (equivalent, not byte-identical, to the baseline): numeric `exclusiveMinimum` instead of the draft-04 `minimum` + `exclusiveMinimum: true` pair, and parameter descriptions on `parameter.description` instead of duplicated inside `parameter.schema.description`. `src/openapi.spec.ts` reads the description from either location.
+- Response datetime schemas use `z.date()` (`createdAt`/`updatedAt` on tickets and comments): payloads carry `Date` objects, the Zod serializer encodes them to ISO strings, and the document renders `format: date-time`.
+- `lib/access-token.ts` signs and verifies compact HS256 JWTs with `node:crypto`; tokens issued by the previous Hono implementation remain valid.
+- `listenOnFirstAvailablePort` accepts an app factory and builds a fresh instance per port attempt, because a Fastify instance cannot serve requests after `close()`. Listening binds `::` explicitly (dual-stack) so occupied ports surface as `EADDRINUSE`, matching the previous Node adapter.
+- Guards run as `onRequest` hooks, so authentication failures take precedence over body parsing and validation, matching the previous middleware order.
+- All quality gates green: 241 unit tests, 6 E2E tests, lint, typecheck, format, production build, and the webapp build; the generated `/openapi.json` matches the baseline fixture with zero remaining differences after the equivalences above.

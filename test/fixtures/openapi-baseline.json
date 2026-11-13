@@ -41,10 +41,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "username",
-                  "password"
-                ],
+                "required": ["username", "password"],
                 "type": "object"
               }
             }
@@ -59,9 +56,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -85,9 +80,7 @@
                         },
                         "tokenType": {
                           "description": "Access token scheme; always Bearer.",
-                          "enum": [
-                            "Bearer"
-                          ],
+                          "enum": ["Bearer"],
                           "example": "Bearer",
                           "type": "string"
                         },
@@ -107,20 +100,13 @@
                             },
                             "role": {
                               "description": "Role: admin (administrator), agent (support staff), or user (requester).",
-                              "enum": [
-                                "admin",
-                                "agent",
-                                "user"
-                              ],
+                              "enum": ["admin", "agent", "user"],
                               "example": "user",
                               "type": "string"
                             },
                             "status": {
                               "description": "Account status: active (enabled) or disabled.",
-                              "enum": [
-                                "active",
-                                "disabled"
-                              ],
+                              "enum": ["active", "disabled"],
                               "example": "active",
                               "type": "string"
                             },
@@ -130,23 +116,11 @@
                               "type": "string"
                             }
                           },
-                          "required": [
-                            "id",
-                            "username",
-                            "displayName",
-                            "role",
-                            "status"
-                          ],
+                          "required": ["id", "username", "displayName", "role", "status"],
                           "type": "object"
                         }
                       },
-                      "required": [
-                        "accessToken",
-                        "tokenType",
-                        "expiresIn",
-                        "refreshToken",
-                        "user"
-                      ],
+                      "required": ["accessToken", "tokenType", "expiresIn", "refreshToken", "user"],
                       "type": "object"
                     },
                     "date": {
@@ -165,12 +139,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -207,9 +176,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -222,13 +189,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -265,9 +226,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -280,13 +239,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -323,9 +276,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -338,13 +289,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -381,9 +326,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -396,13 +339,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -439,9 +376,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -454,13 +389,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -497,9 +426,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -512,13 +439,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -528,9 +449,7 @@
         },
         "security": [],
         "summary": "Log in with username and password",
-        "tags": [
-          "Auth"
-        ]
+        "tags": ["Auth"]
       }
     },
     "/api/auth/logout": {
@@ -548,9 +467,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "refreshToken"
-                ],
+                "required": ["refreshToken"],
                 "type": "object"
               }
             }
@@ -565,9 +482,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "date": {
@@ -586,12 +501,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -628,9 +538,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -643,13 +551,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -686,9 +588,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -701,13 +601,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -744,9 +638,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -759,13 +651,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -779,9 +665,7 @@
           }
         ],
         "summary": "Log out and revoke a refresh token",
-        "tags": [
-          "Auth"
-        ]
+        "tags": ["Auth"]
       }
     },
     "/api/auth/me": {
@@ -796,9 +680,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -818,20 +700,13 @@
                         },
                         "role": {
                           "description": "Role: admin (administrator), agent (support staff), or user (requester).",
-                          "enum": [
-                            "admin",
-                            "agent",
-                            "user"
-                          ],
+                          "enum": ["admin", "agent", "user"],
                           "example": "user",
                           "type": "string"
                         },
                         "status": {
                           "description": "Account status: active (enabled) or disabled.",
-                          "enum": [
-                            "active",
-                            "disabled"
-                          ],
+                          "enum": ["active", "disabled"],
                           "example": "active",
                           "type": "string"
                         },
@@ -841,13 +716,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "id",
-                        "username",
-                        "displayName",
-                        "role",
-                        "status"
-                      ],
+                      "required": ["id", "username", "displayName", "role", "status"],
                       "type": "object"
                     },
                     "date": {
@@ -866,12 +735,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -908,9 +772,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -923,13 +785,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -966,9 +822,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -981,13 +835,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -1024,9 +872,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -1039,13 +885,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -1059,9 +899,7 @@
           }
         ],
         "summary": "Get the current user",
-        "tags": [
-          "Auth"
-        ]
+        "tags": ["Auth"]
       }
     },
     "/api/auth/refresh": {
@@ -1079,9 +917,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "refreshToken"
-                ],
+                "required": ["refreshToken"],
                 "type": "object"
               }
             }
@@ -1096,9 +932,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -1122,19 +956,12 @@
                         },
                         "tokenType": {
                           "description": "Access token scheme; always Bearer.",
-                          "enum": [
-                            "Bearer"
-                          ],
+                          "enum": ["Bearer"],
                           "example": "Bearer",
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "accessToken",
-                        "tokenType",
-                        "expiresIn",
-                        "refreshToken"
-                      ],
+                      "required": ["accessToken", "tokenType", "expiresIn", "refreshToken"],
                       "type": "object"
                     },
                     "date": {
@@ -1153,12 +980,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -1195,9 +1017,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -1210,13 +1030,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -1253,9 +1067,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -1268,13 +1080,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -1311,9 +1117,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -1326,13 +1130,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -1342,9 +1140,7 @@
         },
         "security": [],
         "summary": "Refresh and rotate tokens",
-        "tags": [
-          "Auth"
-        ]
+        "tags": ["Auth"]
       }
     },
     "/api/ticket-categories": {
@@ -1411,9 +1207,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -1442,12 +1236,7 @@
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "id",
-                          "name",
-                          "description",
-                          "enabled"
-                        ],
+                        "required": ["id", "name", "description", "enabled"],
                         "type": "object"
                       },
                       "type": "array"
@@ -1492,12 +1281,7 @@
                           "type": "integer"
                         }
                       },
-                      "required": [
-                        "page",
-                        "pageSize",
-                        "total",
-                        "totalPages"
-                      ],
+                      "required": ["page", "pageSize", "total", "totalPages"],
                       "type": "object"
                     },
                     "path": {
@@ -1506,14 +1290,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "data",
-                    "meta"
-                  ],
+                  "required": ["path", "date", "message", "code", "data", "meta"],
                   "type": "object"
                 }
               }
@@ -1550,9 +1327,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -1565,13 +1340,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -1608,9 +1377,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -1623,13 +1390,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -1666,9 +1427,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -1681,13 +1440,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -1701,9 +1454,7 @@
           }
         ],
         "summary": "List ticket categories with pagination",
-        "tags": [
-          "Ticket Categories"
-        ]
+        "tags": ["Ticket Categories"]
       },
       "post": {
         "description": "Requires admin. The name must be unique and contain 1-64 characters after trimming. description is optional and stored as null when omitted. New categories are enabled by default. Returns the created category.",
@@ -1727,9 +1478,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "name"
-                ],
+                "required": ["name"],
                 "type": "object"
               }
             }
@@ -1744,9 +1493,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -1775,12 +1522,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "id",
-                        "name",
-                        "description",
-                        "enabled"
-                      ],
+                      "required": ["id", "name", "description", "enabled"],
                       "type": "object"
                     },
                     "date": {
@@ -1799,12 +1541,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -1841,9 +1578,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -1856,13 +1591,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -1899,9 +1628,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -1914,13 +1641,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -1957,9 +1678,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -1972,13 +1691,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2015,9 +1728,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2030,13 +1741,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2073,9 +1778,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2088,13 +1791,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2108,9 +1805,7 @@
           }
         ],
         "summary": "Create a ticket category (admin)",
-        "tags": [
-          "Ticket Categories"
-        ]
+        "tags": ["Ticket Categories"]
       }
     },
     "/api/ticket-categories/{id}": {
@@ -2139,9 +1834,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -2170,12 +1863,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "id",
-                        "name",
-                        "description",
-                        "enabled"
-                      ],
+                      "required": ["id", "name", "description", "enabled"],
                       "type": "object"
                     },
                     "date": {
@@ -2194,12 +1882,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -2236,9 +1919,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2251,13 +1932,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2294,9 +1969,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2309,13 +1982,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2352,9 +2019,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2367,13 +2032,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2410,9 +2069,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2425,13 +2082,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2445,9 +2096,7 @@
           }
         ],
         "summary": "Get ticket category details",
-        "tags": [
-          "Ticket Categories"
-        ]
+        "tags": ["Ticket Categories"]
       },
       "patch": {
         "description": "Requires admin. Partially updates name, description, or enabled; at least one defined field is required. Omitted fields remain unchanged and description=null clears the description. Names must be unique. Disabled categories cannot be used for new tickets; existing tickets retain their category reference. There is no physical deletion endpoint.",
@@ -2505,9 +2154,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -2536,12 +2183,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "id",
-                        "name",
-                        "description",
-                        "enabled"
-                      ],
+                      "required": ["id", "name", "description", "enabled"],
                       "type": "object"
                     },
                     "date": {
@@ -2560,12 +2202,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -2602,9 +2239,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2617,13 +2252,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2660,9 +2289,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2675,13 +2302,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2718,9 +2339,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2733,13 +2352,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2776,9 +2389,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2791,13 +2402,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2834,9 +2439,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2849,13 +2452,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2892,9 +2489,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -2907,13 +2502,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -2927,9 +2516,7 @@
           }
         ],
         "summary": "Update or disable a ticket category (admin)",
-        "tags": [
-          "Ticket Categories"
-        ]
+        "tags": ["Ticket Categories"]
       }
     },
     "/api/tickets": {
@@ -2971,13 +2558,7 @@
             "required": false,
             "schema": {
               "description": "Ticket status: pending (awaiting handling), in_progress (being handled), resolved, closed, or cancelled.",
-              "enum": [
-                "pending",
-                "in_progress",
-                "resolved",
-                "closed",
-                "cancelled"
-              ],
+              "enum": ["pending", "in_progress", "resolved", "closed", "cancelled"],
               "example": "pending",
               "type": "string"
             }
@@ -2989,12 +2570,7 @@
             "required": false,
             "schema": {
               "description": "Optional priority: low, medium, high, or urgent. Defaults to medium on creation; omitted list filters do not restrict priority.",
-              "enum": [
-                "low",
-                "medium",
-                "high",
-                "urgent"
-              ],
+              "enum": ["low", "medium", "high", "urgent"],
               "example": "medium",
               "type": "string"
             }
@@ -3080,9 +2656,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -3118,12 +2692,7 @@
                           },
                           "priority": {
                             "description": "Priority: low, medium, high, or urgent.",
-                            "enum": [
-                              "low",
-                              "medium",
-                              "high",
-                              "urgent"
-                            ],
+                            "enum": ["low", "medium", "high", "urgent"],
                             "example": "medium",
                             "type": "string"
                           },
@@ -3134,13 +2703,7 @@
                           },
                           "status": {
                             "description": "Ticket status: pending (awaiting handling), in_progress (being handled), resolved, closed, or cancelled.",
-                            "enum": [
-                              "pending",
-                              "in_progress",
-                              "resolved",
-                              "closed",
-                              "cancelled"
-                            ],
+                            "enum": ["pending", "in_progress", "resolved", "closed", "cancelled"],
                             "example": "pending",
                             "type": "string"
                           },
@@ -3212,12 +2775,7 @@
                           "type": "integer"
                         }
                       },
-                      "required": [
-                        "page",
-                        "pageSize",
-                        "total",
-                        "totalPages"
-                      ],
+                      "required": ["page", "pageSize", "total", "totalPages"],
                       "type": "object"
                     },
                     "path": {
@@ -3226,14 +2784,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "data",
-                    "meta"
-                  ],
+                  "required": ["path", "date", "message", "code", "data", "meta"],
                   "type": "object"
                 }
               }
@@ -3270,9 +2821,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -3285,13 +2834,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -3328,9 +2871,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -3343,13 +2884,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -3386,9 +2921,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -3401,13 +2934,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -3421,9 +2948,7 @@
           }
         ],
         "summary": "Search tickets with pagination",
-        "tags": [
-          "Tickets"
-        ]
+        "tags": ["Tickets"]
       },
       "post": {
         "description": "Available to every authenticated role. categoryId must reference an existing, enabled category. priority defaults to medium. requesterId defaults to the current user; user can only create tickets for themselves, while agent/admin may submit on behalf of another user. New tickets have status=pending and handlerId=null. Returns the ticket with HTTP 200.",
@@ -3448,12 +2973,7 @@
                   },
                   "priority": {
                     "description": "Optional priority: low, medium, high, or urgent. Defaults to medium on creation; omitted list filters do not restrict priority.",
-                    "enum": [
-                      "low",
-                      "medium",
-                      "high",
-                      "urgent"
-                    ],
+                    "enum": ["low", "medium", "high", "urgent"],
                     "example": "medium",
                     "type": "string"
                   },
@@ -3471,11 +2991,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "title",
-                  "description",
-                  "categoryId"
-                ],
+                "required": ["title", "description", "categoryId"],
                 "type": "object"
               }
             }
@@ -3490,9 +3006,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -3528,12 +3042,7 @@
                         },
                         "priority": {
                           "description": "Priority: low, medium, high, or urgent.",
-                          "enum": [
-                            "low",
-                            "medium",
-                            "high",
-                            "urgent"
-                          ],
+                          "enum": ["low", "medium", "high", "urgent"],
                           "example": "medium",
                           "type": "string"
                         },
@@ -3544,13 +3053,7 @@
                         },
                         "status": {
                           "description": "Ticket status: pending (awaiting handling), in_progress (being handled), resolved, closed, or cancelled.",
-                          "enum": [
-                            "pending",
-                            "in_progress",
-                            "resolved",
-                            "closed",
-                            "cancelled"
-                          ],
+                          "enum": ["pending", "in_progress", "resolved", "closed", "cancelled"],
                           "example": "pending",
                           "type": "string"
                         },
@@ -3596,12 +3099,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -3638,9 +3136,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -3653,13 +3149,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -3696,9 +3186,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -3711,13 +3199,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -3754,9 +3236,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -3769,13 +3249,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -3812,9 +3286,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -3827,13 +3299,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -3847,9 +3313,7 @@
           }
         ],
         "summary": "Create a ticket",
-        "tags": [
-          "Tickets"
-        ]
+        "tags": ["Tickets"]
       }
     },
     "/api/tickets/{id}": {
@@ -3878,9 +3342,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -3916,12 +3378,7 @@
                         },
                         "priority": {
                           "description": "Priority: low, medium, high, or urgent.",
-                          "enum": [
-                            "low",
-                            "medium",
-                            "high",
-                            "urgent"
-                          ],
+                          "enum": ["low", "medium", "high", "urgent"],
                           "example": "medium",
                           "type": "string"
                         },
@@ -3932,13 +3389,7 @@
                         },
                         "status": {
                           "description": "Ticket status: pending (awaiting handling), in_progress (being handled), resolved, closed, or cancelled.",
-                          "enum": [
-                            "pending",
-                            "in_progress",
-                            "resolved",
-                            "closed",
-                            "cancelled"
-                          ],
+                          "enum": ["pending", "in_progress", "resolved", "closed", "cancelled"],
                           "example": "pending",
                           "type": "string"
                         },
@@ -3984,12 +3435,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -4026,9 +3472,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4041,13 +3485,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -4084,9 +3522,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4099,13 +3535,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -4142,9 +3572,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4157,13 +3585,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -4200,9 +3622,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4215,13 +3635,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -4258,9 +3672,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4273,13 +3685,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -4293,9 +3699,7 @@
           }
         ],
         "summary": "Get ticket details",
-        "tags": [
-          "Tickets"
-        ]
+        "tags": ["Tickets"]
       }
     },
     "/api/tickets/{id}/assign": {
@@ -4328,9 +3732,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "handlerId"
-                ],
+                "required": ["handlerId"],
                 "type": "object"
               }
             }
@@ -4345,9 +3747,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -4383,12 +3783,7 @@
                         },
                         "priority": {
                           "description": "Priority: low, medium, high, or urgent.",
-                          "enum": [
-                            "low",
-                            "medium",
-                            "high",
-                            "urgent"
-                          ],
+                          "enum": ["low", "medium", "high", "urgent"],
                           "example": "medium",
                           "type": "string"
                         },
@@ -4399,13 +3794,7 @@
                         },
                         "status": {
                           "description": "Ticket status: pending (awaiting handling), in_progress (being handled), resolved, closed, or cancelled.",
-                          "enum": [
-                            "pending",
-                            "in_progress",
-                            "resolved",
-                            "closed",
-                            "cancelled"
-                          ],
+                          "enum": ["pending", "in_progress", "resolved", "closed", "cancelled"],
                           "example": "pending",
                           "type": "string"
                         },
@@ -4451,12 +3840,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -4493,9 +3877,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4508,13 +3890,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -4551,9 +3927,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4566,13 +3940,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -4609,9 +3977,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4624,13 +3990,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -4667,9 +4027,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4682,13 +4040,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -4725,9 +4077,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4740,13 +4090,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -4760,9 +4104,7 @@
           }
         ],
         "summary": "Assign or replace a ticket handler (admin)",
-        "tags": [
-          "Tickets"
-        ]
+        "tags": ["Tickets"]
       }
     },
     "/api/tickets/{id}/comments": {
@@ -4791,9 +4133,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -4823,10 +4163,7 @@
                           },
                           "kind": {
                             "description": "Comment kind: public (requester-visible reply) or internal (staff note). Users can read and write only public comments.",
-                            "enum": [
-                              "public",
-                              "internal"
-                            ],
+                            "enum": ["public", "internal"],
                             "example": "public",
                             "type": "string"
                           },
@@ -4836,14 +4173,7 @@
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "id",
-                          "ticketId",
-                          "authorId",
-                          "body",
-                          "kind",
-                          "createdAt"
-                        ],
+                        "required": ["id", "ticketId", "authorId", "body", "kind", "createdAt"],
                         "type": "object"
                       },
                       "nullable": true,
@@ -4865,12 +4195,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -4907,9 +4232,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4922,13 +4245,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -4965,9 +4282,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -4980,13 +4295,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5023,9 +4332,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -5038,13 +4345,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5081,9 +4382,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -5096,13 +4395,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5139,9 +4432,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -5154,13 +4445,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5174,9 +4459,7 @@
           }
         ],
         "summary": "List ticket comments",
-        "tags": [
-          "Tickets"
-        ]
+        "tags": ["Tickets"]
       },
       "post": {
         "description": "Available to every authenticated role. body is plain text containing 1-5000 characters and kind defaults to public. user can post public replies only on their own tickets. agent/admin can post public or internal comments on any ticket. The author is the current user. Comments are append-only and cannot be edited or deleted. Comments are currently allowed on closed and cancelled tickets.",
@@ -5209,17 +4492,12 @@
                   },
                   "kind": {
                     "description": "Optional comment kind; defaults to public. internal notes are available only to agent/admin.",
-                    "enum": [
-                      "public",
-                      "internal"
-                    ],
+                    "enum": ["public", "internal"],
                     "example": "public",
                     "type": "string"
                   }
                 },
-                "required": [
-                  "body"
-                ],
+                "required": ["body"],
                 "type": "object"
               }
             }
@@ -5234,9 +4512,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -5266,10 +4542,7 @@
                         },
                         "kind": {
                           "description": "Comment kind: public (requester-visible reply) or internal (staff note). Users can read and write only public comments.",
-                          "enum": [
-                            "public",
-                            "internal"
-                          ],
+                          "enum": ["public", "internal"],
                           "example": "public",
                           "type": "string"
                         },
@@ -5279,14 +4552,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "id",
-                        "ticketId",
-                        "authorId",
-                        "body",
-                        "kind",
-                        "createdAt"
-                      ],
+                      "required": ["id", "ticketId", "authorId", "body", "kind", "createdAt"],
                       "type": "object"
                     },
                     "date": {
@@ -5305,12 +4571,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -5347,9 +4608,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -5362,13 +4621,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5405,9 +4658,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -5420,13 +4671,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5463,9 +4708,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -5478,13 +4721,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5521,9 +4758,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -5536,13 +4771,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5579,9 +4808,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -5594,13 +4821,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5614,9 +4835,7 @@
           }
         ],
         "summary": "Add a public reply or internal note",
-        "tags": [
-          "Tickets"
-        ]
+        "tags": ["Tickets"]
       }
     },
     "/api/tickets/{id}/transition": {
@@ -5644,19 +4863,12 @@
                 "properties": {
                   "to": {
                     "description": "Target ticket status. Must satisfy current-state and actor-permission rules; cannot return to pending.",
-                    "enum": [
-                      "in_progress",
-                      "resolved",
-                      "closed",
-                      "cancelled"
-                    ],
+                    "enum": ["in_progress", "resolved", "closed", "cancelled"],
                     "example": "resolved",
                     "type": "string"
                   }
                 },
-                "required": [
-                  "to"
-                ],
+                "required": ["to"],
                 "type": "object"
               }
             }
@@ -5671,9 +4883,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -5709,12 +4919,7 @@
                         },
                         "priority": {
                           "description": "Priority: low, medium, high, or urgent.",
-                          "enum": [
-                            "low",
-                            "medium",
-                            "high",
-                            "urgent"
-                          ],
+                          "enum": ["low", "medium", "high", "urgent"],
                           "example": "medium",
                           "type": "string"
                         },
@@ -5725,13 +4930,7 @@
                         },
                         "status": {
                           "description": "Ticket status: pending (awaiting handling), in_progress (being handled), resolved, closed, or cancelled.",
-                          "enum": [
-                            "pending",
-                            "in_progress",
-                            "resolved",
-                            "closed",
-                            "cancelled"
-                          ],
+                          "enum": ["pending", "in_progress", "resolved", "closed", "cancelled"],
                           "example": "pending",
                           "type": "string"
                         },
@@ -5777,12 +4976,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -5819,9 +5013,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -5834,13 +5026,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5877,9 +5063,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -5892,13 +5076,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5935,9 +5113,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -5950,13 +5126,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -5993,9 +5163,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -6008,13 +5176,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -6051,9 +5213,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -6066,13 +5226,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -6086,9 +5240,7 @@
           }
         ],
         "summary": "Transition ticket status",
-        "tags": [
-          "Tickets"
-        ]
+        "tags": ["Tickets"]
       }
     },
     "/api/users": {
@@ -6130,11 +5282,7 @@
             "required": false,
             "schema": {
               "description": "Optional role: admin, agent, or user.",
-              "enum": [
-                "admin",
-                "agent",
-                "user"
-              ],
+              "enum": ["admin", "agent", "user"],
               "example": "user",
               "type": "string"
             }
@@ -6146,10 +5294,7 @@
             "required": false,
             "schema": {
               "description": "Optional account status: active or disabled.",
-              "enum": [
-                "active",
-                "disabled"
-              ],
+              "enum": ["active", "disabled"],
               "example": "active",
               "type": "string"
             }
@@ -6175,9 +5320,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -6197,20 +5340,13 @@
                           },
                           "role": {
                             "description": "Role: admin (administrator), agent (support staff), or user (requester).",
-                            "enum": [
-                              "admin",
-                              "agent",
-                              "user"
-                            ],
+                            "enum": ["admin", "agent", "user"],
                             "example": "user",
                             "type": "string"
                           },
                           "status": {
                             "description": "Account status: active (enabled) or disabled.",
-                            "enum": [
-                              "active",
-                              "disabled"
-                            ],
+                            "enum": ["active", "disabled"],
                             "example": "active",
                             "type": "string"
                           },
@@ -6220,13 +5356,7 @@
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "id",
-                          "username",
-                          "displayName",
-                          "role",
-                          "status"
-                        ],
+                        "required": ["id", "username", "displayName", "role", "status"],
                         "type": "object"
                       },
                       "type": "array"
@@ -6271,12 +5401,7 @@
                           "type": "integer"
                         }
                       },
-                      "required": [
-                        "page",
-                        "pageSize",
-                        "total",
-                        "totalPages"
-                      ],
+                      "required": ["page", "pageSize", "total", "totalPages"],
                       "type": "object"
                     },
                     "path": {
@@ -6285,14 +5410,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "data",
-                    "meta"
-                  ],
+                  "required": ["path", "date", "message", "code", "data", "meta"],
                   "type": "object"
                 }
               }
@@ -6329,9 +5447,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -6344,13 +5460,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -6387,9 +5497,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -6402,13 +5510,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -6445,9 +5547,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -6460,13 +5560,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -6503,9 +5597,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -6518,13 +5610,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -6538,9 +5624,7 @@
           }
         ],
         "summary": "List users with pagination (admin)",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       },
       "post": {
         "description": "Requires admin. The username must be unique and cannot be changed after creation. role defaults to user and the initial status is always active. Omitting displayName stores null. Returns public account details without a password or password hash.",
@@ -6566,11 +5650,7 @@
                   "role": {
                     "default": "user",
                     "description": "Role: admin (administrator), agent (support staff), or user (requester). Defaults to user on creation.",
-                    "enum": [
-                      "admin",
-                      "agent",
-                      "user"
-                    ],
+                    "enum": ["admin", "agent", "user"],
                     "example": "user",
                     "type": "string"
                   },
@@ -6581,10 +5661,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "username",
-                  "password"
-                ],
+                "required": ["username", "password"],
                 "type": "object"
               }
             }
@@ -6599,9 +5676,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -6621,20 +5696,13 @@
                         },
                         "role": {
                           "description": "Role: admin (administrator), agent (support staff), or user (requester).",
-                          "enum": [
-                            "admin",
-                            "agent",
-                            "user"
-                          ],
+                          "enum": ["admin", "agent", "user"],
                           "example": "user",
                           "type": "string"
                         },
                         "status": {
                           "description": "Account status: active (enabled) or disabled.",
-                          "enum": [
-                            "active",
-                            "disabled"
-                          ],
+                          "enum": ["active", "disabled"],
                           "example": "active",
                           "type": "string"
                         },
@@ -6644,13 +5712,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "id",
-                        "username",
-                        "displayName",
-                        "role",
-                        "status"
-                      ],
+                      "required": ["id", "username", "displayName", "role", "status"],
                       "type": "object"
                     },
                     "date": {
@@ -6669,12 +5731,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -6711,9 +5768,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -6726,13 +5781,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -6769,9 +5818,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -6784,13 +5831,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -6827,9 +5868,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -6842,13 +5881,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -6885,9 +5918,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -6900,13 +5931,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -6943,9 +5968,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -6958,13 +5981,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -6978,9 +5995,7 @@
           }
         ],
         "summary": "Create a user (admin)",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/users/{id}": {
@@ -7009,9 +6024,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -7031,20 +6044,13 @@
                         },
                         "role": {
                           "description": "Role: admin (administrator), agent (support staff), or user (requester).",
-                          "enum": [
-                            "admin",
-                            "agent",
-                            "user"
-                          ],
+                          "enum": ["admin", "agent", "user"],
                           "example": "user",
                           "type": "string"
                         },
                         "status": {
                           "description": "Account status: active (enabled) or disabled.",
-                          "enum": [
-                            "active",
-                            "disabled"
-                          ],
+                          "enum": ["active", "disabled"],
                           "example": "active",
                           "type": "string"
                         },
@@ -7054,13 +6060,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "id",
-                        "username",
-                        "displayName",
-                        "role",
-                        "status"
-                      ],
+                      "required": ["id", "username", "displayName", "role", "status"],
                       "type": "object"
                     },
                     "date": {
@@ -7079,12 +6079,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -7121,9 +6116,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -7136,13 +6129,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -7179,9 +6166,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -7194,13 +6179,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -7237,9 +6216,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -7252,13 +6229,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -7295,9 +6266,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -7310,13 +6279,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -7353,9 +6316,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -7368,13 +6329,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -7388,9 +6343,7 @@
           }
         ],
         "summary": "Get user details (admin)",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       },
       "patch": {
         "description": "Requires admin. Partially updates displayName, role, or status; at least one defined field is required. Omitted fields remain unchanged and displayName=null clears the display name. The username cannot be changed. Administrators cannot submit a role update for themselves, even with the same value, or disable their own account. Role changes and disabling may take until existing access tokens expire to affect ordinary routes.",
@@ -7423,20 +6376,13 @@
                   },
                   "role": {
                     "description": "Optional role: admin, agent, or user.",
-                    "enum": [
-                      "admin",
-                      "agent",
-                      "user"
-                    ],
+                    "enum": ["admin", "agent", "user"],
                     "example": "user",
                     "type": "string"
                   },
                   "status": {
                     "description": "Optional account status: active or disabled.",
-                    "enum": [
-                      "active",
-                      "disabled"
-                    ],
+                    "enum": ["active", "disabled"],
                     "example": "active",
                     "type": "string"
                   }
@@ -7455,9 +6401,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -7477,20 +6421,13 @@
                         },
                         "role": {
                           "description": "Role: admin (administrator), agent (support staff), or user (requester).",
-                          "enum": [
-                            "admin",
-                            "agent",
-                            "user"
-                          ],
+                          "enum": ["admin", "agent", "user"],
                           "example": "user",
                           "type": "string"
                         },
                         "status": {
                           "description": "Account status: active (enabled) or disabled.",
-                          "enum": [
-                            "active",
-                            "disabled"
-                          ],
+                          "enum": ["active", "disabled"],
                           "example": "active",
                           "type": "string"
                         },
@@ -7500,13 +6437,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "id",
-                        "username",
-                        "displayName",
-                        "role",
-                        "status"
-                      ],
+                      "required": ["id", "username", "displayName", "role", "status"],
                       "type": "object"
                     },
                     "date": {
@@ -7525,12 +6456,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -7567,9 +6493,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -7582,13 +6506,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -7625,9 +6543,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -7640,13 +6556,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -7683,9 +6593,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -7698,13 +6606,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -7741,9 +6643,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -7756,13 +6656,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -7799,9 +6693,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -7814,13 +6706,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -7834,9 +6720,7 @@
           }
         ],
         "summary": "Update user details and permissions (admin)",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/api/users/{id}/reset-password": {
@@ -7870,9 +6754,7 @@
                     "writeOnly": true
                   }
                 },
-                "required": [
-                  "password"
-                ],
+                "required": ["password"],
                 "type": "object"
               }
             }
@@ -7887,9 +6769,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "date": {
@@ -7908,12 +6788,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -7950,9 +6825,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -7965,13 +6838,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -8008,9 +6875,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -8023,13 +6888,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -8066,9 +6925,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -8081,13 +6938,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -8124,9 +6975,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -8139,13 +6988,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -8182,9 +7025,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "message"
-                      ],
+                      "required": ["message"],
                       "type": "object"
                     },
                     "message": {
@@ -8197,13 +7038,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code",
-                    "errors"
-                  ],
+                  "required": ["path", "date", "message", "code", "errors"],
                   "type": "object"
                 }
               }
@@ -8217,9 +7052,7 @@
           }
         ],
         "summary": "Reset a user password (admin)",
-        "tags": [
-          "Users"
-        ]
+        "tags": ["Users"]
       }
     },
     "/health": {
@@ -8233,9 +7066,7 @@
                   "properties": {
                     "code": {
                       "description": "Stable business code. Success is always OK; interpret failures together with the HTTP status.",
-                      "enum": [
-                        "OK"
-                      ],
+                      "enum": ["OK"],
                       "type": "string"
                     },
                     "data": {
@@ -8244,16 +7075,12 @@
                       "properties": {
                         "status": {
                           "description": "Service liveness indicator; always ok.",
-                          "enum": [
-                            "ok"
-                          ],
+                          "enum": ["ok"],
                           "example": "ok",
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "status"
-                      ],
+                      "required": ["status"],
                       "type": "object"
                     },
                     "date": {
@@ -8272,12 +7099,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "path",
-                    "date",
-                    "message",
-                    "code"
-                  ],
+                  "required": ["path", "date", "message", "code"],
                   "type": "object"
                 }
               }
@@ -8287,9 +7109,7 @@
         },
         "security": [],
         "summary": "Check service liveness",
-        "tags": [
-          "System"
-        ]
+        "tags": ["System"]
       }
     }
   },

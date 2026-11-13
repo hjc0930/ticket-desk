@@ -1,4 +1,4 @@
-import { z } from '@hono/zod-openapi'
+import { z } from 'zod'
 import { beforeAll, describe, expect, it } from 'vitest'
 
 import { createApp } from './main.ts'
@@ -39,7 +39,7 @@ type OperationType = {
   operationId?: string
   tags: string[]
   security: Record<string, string[]>[]
-  parameters?: { name: string; schema: SchemaType }[]
+  parameters?: { name: string; description?: string; schema: SchemaType }[]
   requestBody?: { content: { 'application/json': { schema: SchemaType } } }
   responses: Record<
     string,
@@ -66,8 +66,8 @@ describe('OpenAPI documentation', () => {
   let document: DocumentType
 
   beforeAll(async () => {
-    const response = await createApp().request('/openapi.json')
-    expect(response.status).toBe(200)
+    const response = await (await createApp()).inject({ method: 'GET', url: '/openapi.json' })
+    expect(response.statusCode).toBe(200)
     document = (await response.json()) as DocumentType
   })
 
@@ -113,7 +113,9 @@ describe('OpenAPI documentation', () => {
         expect(response.description).not.toContain('undefined')
       }
       for (const parameter of operation.parameters ?? []) {
-        expect(parameter.schema.description, parameter.name).toMatch(english)
+        expect(parameter.description ?? parameter.schema?.description, parameter.name).toMatch(
+          english,
+        )
       }
     }
   })
